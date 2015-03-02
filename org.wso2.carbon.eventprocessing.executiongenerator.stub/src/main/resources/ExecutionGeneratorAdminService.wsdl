@@ -1,0 +1,307 @@
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns1="http://org.apache.axis2/xsd" xmlns:ns="http://executiongenerator.eventprocessing.carbon.wso2.org" xmlns:ax2126="http://executiongenerator.eventprocessing.carbon.wso2.org/xsd" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://executiongenerator.eventprocessing.carbon.wso2.org">
+    <wsdl:documentation>ExecutionGeneratorAdminService</wsdl:documentation>
+    <wsdl:types>
+        <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://executiongenerator.eventprocessing.carbon.wso2.org/xsd">
+            <xs:complexType name="DomainConfigInfoDTO">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="description" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="name" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="type" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="DomainInfoDTO">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="description" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="name" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+        <xs:schema xmlns:ax2127="http://executiongenerator.eventprocessing.carbon.wso2.org/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://executiongenerator.eventprocessing.carbon.wso2.org">
+            <xs:import namespace="http://executiongenerator.eventprocessing.carbon.wso2.org/xsd"/>
+            <xs:element name="getAllDomainConfigInfoDTO">
+                <xs:complexType>
+                    <xs:sequence/>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getAllDomainConfigInfoDTOResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="return" nillable="true" type="ax2127:DomainConfigInfoDTO"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getDomainConfig">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="configName" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getDomainConfigResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="deleteConfigInfo">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="configName" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getAllDomainInfoDTO">
+                <xs:complexType>
+                    <xs:sequence/>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getAllDomainInfoDTOResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="return" nillable="true" type="ax2127:DomainInfoDTO"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getTemplateDomain">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="domainName" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getTemplateDomainResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="deployTemplateConfig">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="executionPlanConfigurationXml" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="deployTemplateConfigRequest">
+        <wsdl:part name="parameters" element="ns:deployTemplateConfig"/>
+    </wsdl:message>
+    <wsdl:message name="getAllDomainInfoDTORequest">
+        <wsdl:part name="parameters" element="ns:getAllDomainInfoDTO"/>
+    </wsdl:message>
+    <wsdl:message name="getAllDomainInfoDTOResponse">
+        <wsdl:part name="parameters" element="ns:getAllDomainInfoDTOResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getDomainConfigRequest">
+        <wsdl:part name="parameters" element="ns:getDomainConfig"/>
+    </wsdl:message>
+    <wsdl:message name="getDomainConfigResponse">
+        <wsdl:part name="parameters" element="ns:getDomainConfigResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getTemplateDomainRequest">
+        <wsdl:part name="parameters" element="ns:getTemplateDomain"/>
+    </wsdl:message>
+    <wsdl:message name="getTemplateDomainResponse">
+        <wsdl:part name="parameters" element="ns:getTemplateDomainResponse"/>
+    </wsdl:message>
+    <wsdl:message name="deleteConfigInfoRequest">
+        <wsdl:part name="parameters" element="ns:deleteConfigInfo"/>
+    </wsdl:message>
+    <wsdl:message name="getAllDomainConfigInfoDTORequest">
+        <wsdl:part name="parameters" element="ns:getAllDomainConfigInfoDTO"/>
+    </wsdl:message>
+    <wsdl:message name="getAllDomainConfigInfoDTOResponse">
+        <wsdl:part name="parameters" element="ns:getAllDomainConfigInfoDTOResponse"/>
+    </wsdl:message>
+    <wsdl:portType name="ExecutionGeneratorAdminServicePortType">
+        <wsdl:operation name="deployTemplateConfig">
+            <wsdl:input message="ns:deployTemplateConfigRequest" wsaw:Action="urn:deployTemplateConfig"/>
+        </wsdl:operation>
+        <wsdl:operation name="getAllDomainInfoDTO">
+            <wsdl:input message="ns:getAllDomainInfoDTORequest" wsaw:Action="urn:getAllDomainInfoDTO"/>
+            <wsdl:output message="ns:getAllDomainInfoDTOResponse" wsaw:Action="urn:getAllDomainInfoDTOResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getDomainConfig">
+            <wsdl:input message="ns:getDomainConfigRequest" wsaw:Action="urn:getDomainConfig"/>
+            <wsdl:output message="ns:getDomainConfigResponse" wsaw:Action="urn:getDomainConfigResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getTemplateDomain">
+            <wsdl:input message="ns:getTemplateDomainRequest" wsaw:Action="urn:getTemplateDomain"/>
+            <wsdl:output message="ns:getTemplateDomainResponse" wsaw:Action="urn:getTemplateDomainResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="deleteConfigInfo">
+            <wsdl:input message="ns:deleteConfigInfoRequest" wsaw:Action="urn:deleteConfigInfo"/>
+        </wsdl:operation>
+        <wsdl:operation name="getAllDomainConfigInfoDTO">
+            <wsdl:input message="ns:getAllDomainConfigInfoDTORequest" wsaw:Action="urn:getAllDomainConfigInfoDTO"/>
+            <wsdl:output message="ns:getAllDomainConfigInfoDTOResponse" wsaw:Action="urn:getAllDomainConfigInfoDTOResponse"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="ExecutionGeneratorAdminServiceSoap11Binding" type="ns:ExecutionGeneratorAdminServicePortType">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="deployTemplateConfig">
+            <soap:operation soapAction="urn:deployTemplateConfig" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="getDomainConfig">
+            <soap:operation soapAction="urn:getDomainConfig" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getAllDomainInfoDTO">
+            <soap:operation soapAction="urn:getAllDomainInfoDTO" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getTemplateDomain">
+            <soap:operation soapAction="urn:getTemplateDomain" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="deleteConfigInfo">
+            <soap:operation soapAction="urn:deleteConfigInfo" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="getAllDomainConfigInfoDTO">
+            <soap:operation soapAction="urn:getAllDomainConfigInfoDTO" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="ExecutionGeneratorAdminServiceSoap12Binding" type="ns:ExecutionGeneratorAdminServicePortType">
+        <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="deployTemplateConfig">
+            <soap12:operation soapAction="urn:deployTemplateConfig" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="getDomainConfig">
+            <soap12:operation soapAction="urn:getDomainConfig" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getAllDomainInfoDTO">
+            <soap12:operation soapAction="urn:getAllDomainInfoDTO" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getTemplateDomain">
+            <soap12:operation soapAction="urn:getTemplateDomain" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="deleteConfigInfo">
+            <soap12:operation soapAction="urn:deleteConfigInfo" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="getAllDomainConfigInfoDTO">
+            <soap12:operation soapAction="urn:getAllDomainConfigInfoDTO" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="ExecutionGeneratorAdminServiceHttpBinding" type="ns:ExecutionGeneratorAdminServicePortType">
+        <http:binding verb="POST"/>
+        <wsdl:operation name="deployTemplateConfig">
+            <http:operation location="deployTemplateConfig"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="parameters"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="getDomainConfig">
+            <http:operation location="getDomainConfig"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getAllDomainInfoDTO">
+            <http:operation location="getAllDomainInfoDTO"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getTemplateDomain">
+            <http:operation location="getTemplateDomain"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="deleteConfigInfo">
+            <http:operation location="deleteConfigInfo"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="parameters"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="getAllDomainConfigInfoDTO">
+            <http:operation location="getAllDomainConfigInfoDTO"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="ExecutionGeneratorAdminService">
+        <wsdl:port name="ExecutionGeneratorAdminServiceHttpsSoap11Endpoint" binding="ns:ExecutionGeneratorAdminServiceSoap11Binding">
+            <soap:address location="https://127.0.0.1:9443/services/ExecutionGeneratorAdminService.ExecutionGeneratorAdminServiceHttpsSoap11Endpoint/"/>
+        </wsdl:port>
+        <wsdl:port name="ExecutionGeneratorAdminServiceHttpsSoap12Endpoint" binding="ns:ExecutionGeneratorAdminServiceSoap12Binding">
+            <soap12:address location="https://127.0.0.1:9443/services/ExecutionGeneratorAdminService.ExecutionGeneratorAdminServiceHttpsSoap12Endpoint/"/>
+        </wsdl:port>
+        <wsdl:port name="ExecutionGeneratorAdminServiceHttpsEndpoint" binding="ns:ExecutionGeneratorAdminServiceHttpBinding">
+            <http:address location="https://127.0.0.1:9443/services/ExecutionGeneratorAdminService.ExecutionGeneratorAdminServiceHttpsEndpoint/"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>
