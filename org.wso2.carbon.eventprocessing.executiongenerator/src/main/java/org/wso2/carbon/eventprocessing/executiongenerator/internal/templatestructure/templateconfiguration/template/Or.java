@@ -6,7 +6,9 @@
 //
 
 
-package org.wso2.carbon.eventprocessing.executiongenerator.internal.templatestructure.templateconfiguration;
+package org.wso2.carbon.eventprocessing.executiongenerator.internal.templatestructure.templateconfiguration.template;
+
+import org.wso2.carbon.eventprocessing.executiongenerator.internal.templatestructure.templateconfiguration.TemplateObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,12 +20,12 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for and complex type.
+ * <p>Java class for or complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="and">
+ * &lt;complexType name="or">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
@@ -40,12 +42,12 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "and", propOrder = {
+@XmlType(name = "or", propOrder = {
     "or",
     "and",
     "template"
 })
-public class And {
+public class Or {
 
     @XmlElement(required = true)
     protected List<Or> or;

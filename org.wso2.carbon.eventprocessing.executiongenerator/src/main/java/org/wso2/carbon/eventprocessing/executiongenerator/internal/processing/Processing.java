@@ -8,6 +8,10 @@ import org.wso2.carbon.eventprocessing.executiongenerator.internal.templatestruc
 import org.wso2.carbon.eventprocessing.executiongenerator.internal.templatestructure.executionplan.ObjectFactory;
 import org.wso2.carbon.eventprocessing.executiongenerator.internal.templatestructure.temperatureanalysis.TemplateDomain;
 import org.wso2.carbon.eventprocessing.executiongenerator.internal.templatestructure.templateconfiguration.*;
+import org.wso2.carbon.eventprocessing.executiongenerator.internal.templatestructure.templateconfiguration.parameter.AND;
+import org.wso2.carbon.eventprocessing.executiongenerator.internal.templatestructure.templateconfiguration.parameter.OR;
+import org.wso2.carbon.eventprocessing.executiongenerator.internal.templatestructure.templateconfiguration.template.And;
+import org.wso2.carbon.eventprocessing.executiongenerator.internal.templatestructure.templateconfiguration.template.Or;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBElement;
@@ -849,8 +853,8 @@ public class Processing {
      */
     public void processConditionParameters(ConditionParameters conditionParam) {
 
-        And2 andParam = conditionParam.getAND();
-        Or2 orParam = conditionParam.getOR();
+        AND andParam = conditionParam.getAND();
+        OR orParam = conditionParam.getOR();
         Parameter param = conditionParam.getParameter();
 
         if (param != null) {
@@ -890,10 +894,10 @@ public class Processing {
      * @param andParam and operation
      * @param parent   parent node
      */
-    public void processANDCondition(And2 andParam, ConditionNode parent) {
+    public void processANDCondition(AND andParam, ConditionNode parent) {
 
-        List<And2> andList = andParam.getAND();
-        List<Or2> orList = andParam.getOR();
+        List<AND> andList = andParam.getAND();
+        List<OR> orList = andParam.getOR();
         List<Parameter> parameterList = andParam.getParameter();
         ConditionNode conditionNode = new ConditionNode();
         conditionNode.setOrder(andParam.getOrder());
@@ -942,10 +946,10 @@ public class Processing {
      * @param orParam or operation
      * @param parent  parent node
      */
-    public void processORCondition(Or2 orParam, ConditionNode parent) {
+    public void processORCondition(OR orParam, ConditionNode parent) {
 
-        List<And2> andList = orParam.getAND();
-        List<Or2> orList = orParam.getOR();
+        List<AND> andList = orParam.getAND();
+        List<OR> orList = orParam.getOR();
         List<Parameter> parameterList = orParam.getParameter();
         ConditionNode conditionNode = new ConditionNode();
         conditionNode.setOrder(orParam.getOrder());

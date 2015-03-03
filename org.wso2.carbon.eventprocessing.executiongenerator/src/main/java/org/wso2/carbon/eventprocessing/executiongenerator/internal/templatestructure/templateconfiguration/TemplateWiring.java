@@ -8,6 +8,9 @@
 
 package org.wso2.carbon.eventprocessing.executiongenerator.internal.templatestructure.templateconfiguration;
 
+import org.wso2.carbon.eventprocessing.executiongenerator.internal.templatestructure.templateconfiguration.template.And;
+import org.wso2.carbon.eventprocessing.executiongenerator.internal.templatestructure.templateconfiguration.template.Or;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;

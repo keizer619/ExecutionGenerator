@@ -8,6 +8,9 @@
 
 package org.wso2.carbon.eventprocessing.executiongenerator.internal.templatestructure.templateconfiguration;
 
+import org.wso2.carbon.eventprocessing.executiongenerator.internal.templatestructure.templateconfiguration.parameter.AND;
+import org.wso2.carbon.eventprocessing.executiongenerator.internal.templatestructure.templateconfiguration.parameter.OR;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -48,9 +51,9 @@ public class ConditionParameters {
     @XmlElement(name = "Parameter", required = true)
     protected Parameter parameter;
     @XmlElement(name = "OR", required = true)
-    protected Or2 or;
+    protected OR or;
     @XmlElement(name = "AND", required = true)
-    protected And2 and;
+    protected AND and;
     @XmlAttribute(name = "name", required = true)
     protected String name;
 
@@ -83,10 +86,10 @@ public class ConditionParameters {
      * 
      * @return
      *     possible object is
-     *     {@link Or2 }
+     *     {@link org.wso2.carbon.eventprocessing.executiongenerator.internal.templatestructure.templateconfiguration.parameter.OR }
      *     
      */
-    public Or2 getOR() {
+    public OR getOR() {
         return or;
     }
 
@@ -95,10 +98,10 @@ public class ConditionParameters {
      * 
      * @param value
      *     allowed object is
-     *     {@link Or2 }
+     *     {@link org.wso2.carbon.eventprocessing.executiongenerator.internal.templatestructure.templateconfiguration.parameter.OR }
      *     
      */
-    public void setOR(Or2 value) {
+    public void setOR(OR value) {
         this.or = value;
     }
 
@@ -107,10 +110,10 @@ public class ConditionParameters {
      * 
      * @return
      *     possible object is
-     *     {@link And2 }
+     *     {@link org.wso2.carbon.eventprocessing.executiongenerator.internal.templatestructure.templateconfiguration.parameter.AND }
      *     
      */
-    public And2 getAND() {
+    public AND getAND() {
         return and;
     }
 
@@ -119,10 +122,10 @@ public class ConditionParameters {
      * 
      * @param value
      *     allowed object is
-     *     {@link And2 }
+     *     {@link org.wso2.carbon.eventprocessing.executiongenerator.internal.templatestructure.templateconfiguration.parameter.AND }
      *     
      */
-    public void setAND(And2 value) {
+    public void setAND(AND value) {
         this.and = value;
     }
 

@@ -8,6 +8,9 @@
 
 package org.wso2.carbon.eventprocessing.executiongenerator.internal.templatestructure.templateconfiguration;
 
+import org.wso2.carbon.eventprocessing.executiongenerator.internal.templatestructure.templateconfiguration.template.And;
+import org.wso2.carbon.eventprocessing.executiongenerator.internal.templatestructure.templateconfiguration.template.Or;
+
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlElementDecl;
 import javax.xml.bind.annotation.XmlRegistry;
@@ -65,7 +68,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Or }
+     * Create an instance of {@link org.wso2.carbon.eventprocessing.executiongenerator.internal.templatestructure.templateconfiguration.template.Or }
      * 
      */
     public Or createOr() {
@@ -113,7 +116,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link And }
+     * Create an instance of {@link org.wso2.carbon.eventprocessing.executiongenerator.internal.templatestructure.templateconfiguration.template.And }
      * 
      */
     public And createAnd() {
